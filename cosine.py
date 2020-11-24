@@ -152,6 +152,7 @@ class Cosine(Scene):
         everything.add(wrap)
 
         self.play(ApplyMethod(everything.to_edge, LEFT))
+        self.bring_to_back(self.plane, self.circle)
 
         self.graph_plane = Axes(**self.graph_plane_config).to_edge(RIGHT)
 
