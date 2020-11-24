@@ -127,7 +127,7 @@ class Tangent(Scene):
         self.perpend = always_redraw(lambda: Line(
             self.circle.point_at_angle(0) + DOWN * 5,
             self.circle.point_at_angle(0) + UP * 5,
-            stroke_color = WHITE, **self.line_config
+            stroke_color = GREEN, **self.line_config
         ))
 
         # make point B
@@ -219,9 +219,7 @@ class Tangent(Scene):
         self.add(tan_graph, perpend, dot)
         tan_graph.save_state()
 
-        self.play(
-            ApplyMethod(self.theta.set_value, 4.8 * PI, rate_func = linear, run_time = 30)
-        )
+        self.play(ApplyMethod(self.theta.set_value, 4.8 * PI, rate_func = linear, run_time = 30))
         self.wait(2)
 
         self.theta.set_value(0)
@@ -234,7 +232,5 @@ class Tangent(Scene):
 
         self.add(hor)
 
-        self.play(
-            ApplyMethod(self.theta.set_value, 4.8 * PI, rate_func = linear, run_time = 30)
-        )
+        self.play(ApplyMethod(self.theta.set_value, 4.8 * PI, rate_func = linear, run_time = 30))
         self.wait(3)
